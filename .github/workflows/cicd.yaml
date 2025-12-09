@@ -10,6 +10,9 @@ jobs:
   ansible-test:
     runs-on: ubuntu-latest
 
+    env: 
+      ANSIBLE_HOST_KEY_CHECKING: "False"
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
