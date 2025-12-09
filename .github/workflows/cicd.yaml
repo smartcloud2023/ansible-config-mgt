@@ -1,0 +1,25 @@
+name: Ansible Workflows
+
+on:
+  push:
+    branches:
+      - main
+
+
+jobs:
+  ansible-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+    
+      - name: Configure SSH key
+        run: |
+            mkdir -p ~/.ssh
+            echo "${{ secrets.ANSIBLE_PRIVATE_SSHKEY  }}" > ~/.ssh/ansible-private-key.pem
+            chmod 600 ~/.ssh/ansible-private-key.pem
+
+      - name: Test Ansible ping
+        run: | 
+           ansible all -i inventory.ini -m ping
