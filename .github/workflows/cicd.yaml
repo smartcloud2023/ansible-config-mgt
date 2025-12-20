@@ -25,7 +25,7 @@ jobs:
 
       - name: Test Ansible ping
         run: | 
-           #ansible db_servers -i inventory.ini -m ping
+           ansible db_servers -i inventory.ini -m ping
            ansible all -i inventory.ini -m command -a "hostnamectl"
-           #ansible all -i inventory.ini -m command -a "timedatectl"
-           #ansible all -i inventory.ini -m command -a "df -h"
+           ansible all -i inventory.ini -m command -a "timedatectl"
+           ansible all -i inventory.ini -m command -a "df -h"
