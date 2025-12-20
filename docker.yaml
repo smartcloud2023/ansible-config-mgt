@@ -14,12 +14,12 @@
       debug: 
         var: update_output.stdout
 
-    # - name: Install Docker
-    #   ansible.builtin.apt:
-    #     name: docker.io
-    #     state: present 
-    #   register: docker_result
+    - name: Install Docker
+      ansible.builtin.apt:
+        name: docker.io
+        state: present 
+      register: docker_result
 
-    # - name: Display Docker installtion output 
-    #   debug: 
-    #     var: docker_result.stdout
+    - name: Display Docker installtion output 
+      debug: 
+        var: docker_result.stdout
