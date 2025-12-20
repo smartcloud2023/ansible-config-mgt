@@ -4,7 +4,7 @@
   gather_facts: no 
   tasks: 
     - name: Get hostname using hostnamectl 
-      command: hostnamectl
+      command: hostnamctl
       register:  hostnamectl_output
 
     - name: Display hostnamectl info
