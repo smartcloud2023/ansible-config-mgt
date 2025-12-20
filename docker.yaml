@@ -14,10 +14,12 @@
       debug: 
         var: update_output.stdout
 
-    - name: Install Docker
+
+
+    - name: uninstall Docker
       ansible.builtin.apt:
         name: docker.io
-        state: present 
+        state: absent 
       register: docker_result
 
     - name: Display Docker installtion output 

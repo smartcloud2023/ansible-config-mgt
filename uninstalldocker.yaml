@@ -1,0 +1,15 @@
+---
+- name: Uninstall Docker
+  hosts: all 
+  gather_facts: no
+  become: yes
+  tasks: 
+    - name: Uninstall Docker
+      ansible.builtin.apt:
+        name: docker.io
+        state: absent 
+      register: uninstall_docker_result
+
+    - name: Display Docker uninstallation output 
+      debug: 
+        var: uninstall_docker_result.stdout
