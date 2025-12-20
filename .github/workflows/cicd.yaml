@@ -25,4 +25,4 @@ jobs:
 
       - name: Test Ansible ping
         run: | 
-           ansible all -i inventory.ini -m ping
+           ansible web_servers -i inventory.ini -m ping
