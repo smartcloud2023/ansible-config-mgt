@@ -1,0 +1,12 @@
+---
+- name: Check the hostnamectl of the servers
+  hosts: all 
+  gather_facts: no 
+  tasks: 
+    - name: Get hostname using hostnamectl 
+      command: hostnamectl
+      register:  hostnamectl_output
+
+    - name: Display hostnamectl info
+      debug: 
+        var: hostnamectl_output.stdout
