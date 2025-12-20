@@ -25,14 +25,14 @@ jobs:
 
       - name: Test Ansible ping
         run: | 
-          ansible-playbook -i inventory.ini playbook.yaml
+          ansible-playbook -i inventory.ini docker.yaml
 
 
 
 
 
 
-          
+
 
           #  ansible db_servers -i inventory.ini -m ping
 
